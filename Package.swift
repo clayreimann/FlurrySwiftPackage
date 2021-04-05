@@ -14,7 +14,7 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "FlurryAnalyticsSPM",
-            targets: ["FlurryAnalytics"]
+            targets: ["FlurryAnalytics","FlurryCrashReporter"]
         ),
         .library(
             name: "FlurryMessagingSPM",
@@ -52,6 +52,10 @@ let package = Package(
             name: "FlurryAds",
             dependencies: ["FlurryAdsBinary"]
         ),
+        .target(
+            name: "FlurryCrashReporter",
+            dependencies: ["FlurryCrashReporterBinary"]
+        ),
         .binaryTarget(
             name: "FlurryAnalyticsBinary",
             path: "artifacts/Flurry.xcframework"
@@ -69,7 +73,7 @@ let package = Package(
             path: "artifacts/FlurryAds.xcframework"
         ),
         .binaryTarget(
-            name: "FlurryCrashReporter",
+            name: "FlurryCrashReporterBinary",
             path: "artifacts/CrashReporter.xcframework"
         ),
         
