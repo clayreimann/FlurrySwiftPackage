@@ -13,7 +13,7 @@ let package = Package(
     products: [
         .library(
             name: "FlurryAnalyticsSPM",
-            targets: ["FlurryAnalyticsBinary"]
+            targets: ["FlurryAnalyticsBinary","FlurryCrashReporter"]
         ),
         .library(
             name: "FlurryMessagingSPM",
@@ -31,7 +31,7 @@ let package = Package(
     targets: [
         .target(
             name: "FlurryAnalytics",
-            dependencies: ["FlurryAnalyticsBinary"]
+            dependencies: ["FlurryAnalyticsBinary","FlurryCrashReporter"]
         ),
         .target(
             name: "FlurryMessaging",
