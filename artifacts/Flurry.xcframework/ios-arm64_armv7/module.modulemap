@@ -1,4 +1,4 @@
 module Flurry {
-  umbrella header "./Headers/Flurry.h"
+  umbrella header "Flurry.h"
   export *
 }
