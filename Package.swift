@@ -31,8 +31,7 @@ let package = Package(
     targets: [
         .target(
             name: "FlurryAnalytics",
-            dependencies: ["FlurryAnalyticsBinary","FlurryCrashReporter"],
-            publicHeadersPath: "include"
+            dependencies: ["FlurryAnalyticsBinary","FlurryCrashReporter"]
         ),
         .target(
             name: "FlurryMessaging",
