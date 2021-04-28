@@ -38,7 +38,7 @@ let package = Package(
         ),
         .binaryTarget(
             name: "FlurryAnalyticsBinary",
-            path: "artifacts/Flurry.xcframework"
+            path: "artifacts/FlurryAnalytics.xcframework"
         ),
         .binaryTarget(
             name: "CrashReporterBinary",
