@@ -1,8 +1,5 @@
 //
-//  File.swift
-//  
-//
-//  Created by Nirha Patel on 9/6/20.
+// Copyright Flurry 2020
 //
 
-import Foundation
+// SPM requires a source file

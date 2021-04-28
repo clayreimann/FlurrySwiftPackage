@@ -1,0 +1,7 @@
+framework module FirebaseAnalytics {
+umbrella header "Flurry.h"
+export *
+module * { export * }
+  link framework "Foundation"
+  link framework "SystemConfiguration"
+}

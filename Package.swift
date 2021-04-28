@@ -13,76 +13,83 @@ let package = Package(
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "FlurryAnalyticsSPM",
+            name: "FlurryAnalytics",
             targets: ["FlurryAnalytics"]
         ),
         .library(
-            name: "FlurryMessagingSPM",
+            name: "FlurryMessaging",
             targets: ["FlurryMessaging"]
         ),
         .library(
-            name: "FlurryConfigSPM",
+            name: "FlurryConfig",
             targets: ["FlurryConfig"]
         ),
         .library(
-            name: "FlurryAdsSPM",
+            name: "FlurryAds",
             targets: ["FlurryAds"]
         )
     ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-    ],
+    dependencies: [],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+        // Analytics SDK
         .target(
             name: "FlurryAnalytics",
             dependencies: ["FlurryAnalyticsBinary"]
-        ),
-        .target(
-            name: "FlurryMessaging",
-            dependencies: ["FlurryMessagingBinary"]
-        ),
-        .target(
-            name: "FlurryConfig",
-            dependencies: ["FlurryConfigBinary"]
-        ),
-        .target(
-            name: "FlurryAds",
-            dependencies: ["FlurryAdsBinary"]
         ),
         .binaryTarget(
             name: "FlurryAnalyticsBinary",
             path: "artifacts/Flurry.xcframework"
         ),
         .binaryTarget(
+            name: "CrashReporterBinary",
+            path: "artifacts/CrashReporter.xcframework"
+        ),
+        
+        // Messaging SDK
+        .target(
+            name: "FlurryMessaging",
+            dependencies: ["FlurryMessagingBinary"]
+        ),
+        .binaryTarget(
             name: "FlurryMessagingBinary",
             path: "artifacts/FlurryMessaging.xcframework"
+        ),
+        
+        // Config SDK
+        .target(
+            name: "FlurryConfig",
+            dependencies: ["FlurryConfigBinary"]
         ),
         .binaryTarget(
             name: "FlurryConfigBinary",
             path: "artifacts/FlurryConfig.xcframework"
+        ),
+        
+        // Ads SDK
+        .target(
+            name: "FlurryAds",
+            dependencies: ["FlurryAdsBinary"]
         ),
         .binaryTarget(
             name: "FlurryAdsBinary",
             path: "artifacts/FlurryAds.xcframework"
         ),
         
+        // Tests
         .testTarget(
-            name: "FlurryAnalyticsSPM",
+            name: "FlurryAnalyticsTests",
             dependencies: ["FlurryAnalytics"]
         ),
         .testTarget(
-            name: "FlurryMessagingSPM",
+            name: "FlurryMessagingTests",
             dependencies: ["FlurryMessaging"]
         ),
         .testTarget(
-            name: "FlurryConfigSPM",
+            name: "FlurryConfigTests",
             dependencies: ["FlurryConfig"]
         ),
         .testTarget(
-            name: "FlurryAdsSPM",
+            name: "FlurryAdsTests",
             dependencies: ["FlurryAds"]
         )
     ]
